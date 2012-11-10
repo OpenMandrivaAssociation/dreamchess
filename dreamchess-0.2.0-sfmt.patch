@@ -1,0 +1,12 @@
+diff -urN dreamchess-0.2.0/src/ui.c dreamchess-0.2.0-patched/src/ui.c
+--- dreamchess-0.2.0/src/ui.c	2007-11-16 08:07:28.000000000 +1000
++++ dreamchess-0.2.0-patched/src/ui.c	2012-03-14 17:14:14.361323876 +1100
+@@ -60,7 +60,7 @@
+     {
+         if (i > 0)
+             printf(", ");
+-        printf(ui_driver[i]->name);
++        printf("%s", ui_driver[i]->name);
+         i++;
+     }
+     printf("\n");
