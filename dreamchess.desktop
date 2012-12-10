@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=DreamChess
+Exec=dreamchess
+Icon=/usr/share/pixmaps/dreamchess.png
+Categories=Game;BoardGame;
+Comment[ru]=Игра в шахматы
+Comment=A chessboard game

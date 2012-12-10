@@ -68,3 +68,10 @@ This package contains data files for DreamChess game.
 %files data
 %{_gamesdatadir}/*
 
+
+
+%changelog
+* Wed Mar 14 2012 Andrey Bondrov <abondrov@mandriva.org> 0.2.0-1
++ Revision: 784922
+- imported package dreamchess
+
