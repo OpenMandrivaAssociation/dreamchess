@@ -1,7 +1,7 @@
 Summary:	OpenGL chess game
 Name:		dreamchess
 Version:	0.2.0
-Release:	2
+Release:	3
 License:	GPLv3+
 Group:		Games/Boards
 Url:		http://www.dreamchess.org/
