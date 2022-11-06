@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(sdl2)
 BuildRequires:	pkgconfig(SDL2_image)
 BuildRequires:	pkgconfig(SDL2_mixer)
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:	pkgconfig(expat)
 BuildRequires:	cmake ninja
 BuildRequires:	bison flex
 
