@@ -11,6 +11,7 @@ Source2:	%{name}-48.png
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(glu)
+BuildRequires:	pkgconfig(glew)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(mxml)
 BuildRequires:	pkgconfig(sdl2)
