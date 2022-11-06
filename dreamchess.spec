@@ -18,7 +18,7 @@ BuildRequires:	pkgconfig(SDL2_image)
 BuildRequires:	pkgconfig(SDL2_mixer)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	cmake ninja
-BuildRequires:	bison
+BuildRequires:	bison flex
 
 %description
 DreamChess is a user interface for playing chess. It comes with its own
