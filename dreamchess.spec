@@ -1,25 +1,23 @@
 Summary:	OpenGL chess game
 Name:		dreamchess
-Version:	0.2.0
-Release:	3
+Version:	0.3.0
+Release:	1
 License:	GPLv3+
 Group:		Games/Boards
 Url:		http://www.dreamchess.org/
-Source0:	%{name}-%{version}.tar.gz
+Source0:	https://github.com/dreamchess/dreamchess/archive/refs/tags/0.3.0.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}-48.png
-Patch0:		dreamchess-0.2.0-pthread.patch
-Patch1:		dreamchess-0.2.0-sfmt.patch
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(glu)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(mxml)
-BuildRequires:	pkgconfig(sdl)
-BuildRequires:	pkgconfig(SDL_image)
-BuildRequires:	pkgconfig(SDL_mixer)
+BuildRequires:	pkgconfig(sdl2)
+BuildRequires:	pkgconfig(SDL2_image)
+BuildRequires:	pkgconfig(SDL2_mixer)
 BuildRequires:	pkgconfig(zlib)
-Requires:	%{name}-data = %{EVRD}
+BuildRequires:	cmake ninja
 
 %description
 DreamChess is a user interface for playing chess. It comes with its own
@@ -33,41 +31,20 @@ Winboard (http://www.tim-mann.org/xboard.html) and recent editions of the
 commercial chess program Chessmaster (http://www.chessmaster.com/).
 
 %files
-%doc README COPYING ChangeLog AUTHORS INSTALL
-%{_gamesbindir}/*
-%{_datadir}/pixmaps/%{name}.png
+%{_bindir}/*
+%{_datadir}/icons/*/*/*/*.*
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/%{name}
 %{_mandir}/man6/*
-
-#----------------------------------------------------------------------------
-
-%package data
-Summary:	Data files for DreamChess game
-Group:		Games/Boards
-BuildArch:	noarch
-Requires:	%{name} = %{EVRD}
-
-%description data
-This package contains data files for DreamChess game.
-
-%files data
-%{_gamesdatadir}/*
-
-#----------------------------------------------------------------------------
+%doc %{_docdir}/DreamChess
 
 %prep
-%setup -q
-%patch0 -p1
-%patch1 -p1
+%autosetup -p1
+%cmake -G Ninja
 
 %build
-%configure2_5x \
-	--bindir=%{_gamesbindir} \
-	--datadir=%{_gamesdatadir}
-%make
+%ninja_build -C build
 
 %install
-%makeinstall_std
-install -pD -m644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
-install -pD -m644 %{SOURCE2} %{buildroot}%{_datadir}/pixmaps/%{name}.png
-
+%ninja_install -C build
+#install -pD -m644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
