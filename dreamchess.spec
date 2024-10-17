@@ -4,7 +4,7 @@ Version:	0.3.0
 Release:	1
 License:	GPLv3+
 Group:		Games/Boards
-Url:		http://www.dreamchess.org/
+Url:		https://www.dreamchess.org/
 Source0:	https://github.com/dreamchess/dreamchess/archive/refs/tags/0.3.0.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}-48.png
